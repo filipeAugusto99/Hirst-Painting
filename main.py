@@ -11,6 +11,11 @@
 #     new_color = (r, g, b)
 #     rgb_colors.append(new_color)
 
+from turtle import *
+import random
+
+colormode(255)
+
 colors_list = [
     (241, 119, 38),
     (240, 77, 93),
@@ -37,3 +42,25 @@ colors_list = [
     (119, 97, 0),
     (116, 136, 137),
 ]
+
+t = Turtle()
+t.color("blue")
+t.penup()
+
+
+y = -250
+
+for _ in range(10):
+    y += 50
+    x = -220
+
+    for _ in range(10):
+        t.setpos(x, y)
+        t.dot(20, random.choice(colors_list))
+        x += 50
+
+t.home()
+
+
+sc = Screen()
+sc.exitonclick()
